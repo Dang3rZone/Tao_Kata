@@ -1,0 +1,71 @@
+@import "variables";
+header {
+  padding: 20px;
+  background: {
+    color: $blackColor;
+  }
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $breakPointTablet) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  text-align: center;
+  border-bottom: 3px solid $secundaryColor;
+  .logo {
+    a {
+      color: $secundaryColor;
+      border: 1px solid $secundaryColor;
+      padding: 10px;
+      margin: 10px;
+      display: inline-block;
+      text-decoration: none;
+
+      font: {
+        weight: bold;
+        size: 3rem;
+      }
+    }
+  }
+  nav {
+    ul {
+      li {
+        @media (min-width: $breakPointTablet) {
+          display: inline-block;
+          padding: 0px 5px;
+        }
+        margin: 20px 0px;
+        a {
+          color: $secundaryColor;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 1.5rem;
+          margin: 3rem;
+          &:hover {
+            background-color: $secundaryColor;
+            color: $blackColor;
+            border-radius: 10px;
+          }
+        }
+        input {
+          padding: 10px;
+          border: 3px solid $secundaryColor;
+          border-radius: 10px;
+        }
+        button {
+          padding: 10px;
+          background-color: transparent;
+          border: 3px solid $secundaryColor;
+          margin-left: 10px;
+          color: $secundaryColor;
+          border-radius: 10px;
+          cursor: pointer;
+          &:hover {
+            background-color: $secundaryColor;
+            color: $blackColor;
+          }
+        }
+      }
+    }
+  }
+}

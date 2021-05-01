@@ -1,0 +1,18 @@
+<section class="character">
+  <figure>
+    <img [src]="character?.picture" [alt]="character?.lastName" />
+  </figure>
+  <div class="info">
+    <h2>
+      {{ character?.title }}.
+      <strong>{{ character?.firstName.toUpperCase() }}</strong>
+      {{ character?.lastName.toUpperCase() }}
+    </h2>
+
+    <ul>
+      <li>Email: {{ character?.email }}</li>
+      <li>Address: {{ character?.address }}</li>
+      <li>Gender: {{ character?.gender }}</li>
+    </ul>
+  </div>
+</section>

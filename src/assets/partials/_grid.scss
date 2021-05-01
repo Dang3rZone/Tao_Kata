@@ -1,0 +1,39 @@
+@import 'variables';
+
+[class*='col-']{
+  margin: $marginGrid;
+}
+
+.grid{
+  display: flex;
+  flex-wrap: wrap;
+
+  @for $i from 1 through 12
+  {
+    /* movil */
+    .col-#{$i}{
+      $columWidth: 100% / 12 * $i;
+      width: calc( #{$columWidth} - #{($marginGrid * 2)});
+    }
+  }
+
+  @media(min-width: $breakPointTablet){
+    @for $i from 1 through 12{
+      /* tablet */
+      .col-t-#{$i}{
+        $columWidth: 100% / 12 * $i;
+        width: calc( #{$columWidth} - #{($marginGrid * 2)});
+      }
+    }
+  }
+
+  @media(min-width: $breakPointDesktop){
+    @for $i from 1 through 12{
+      /* desktop */
+      .col-d-#{$i}{
+        $columWidth: 100% / 12 * $i;
+        width: calc( #{$columWidth} - #{($marginGrid * 2)});
+      }
+    }
+  }
+}

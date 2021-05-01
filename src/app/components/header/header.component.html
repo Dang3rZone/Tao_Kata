@@ -1,0 +1,15 @@
+<header>
+  <div class="logo">
+    <a [routerLink]="['/home']">TAO</a>
+  </div>
+  <nav>
+    <ul>
+      <li><a [routerLink]="['/characters']">Patients</a></li>
+
+      <li>
+        <input [(ngModel)]="search" type="text" placeholder="Search by name" />
+        <button (click)="searchValue()">BUSCAR</button>
+      </li>
+    </ul>
+  </nav>
+</header>

@@ -1,0 +1,17 @@
+.character {
+  height: 100vh;
+  margin: 2rem 2rem;
+  display: flex;
+
+  h2 {
+    margin: 1rem;
+  }
+  li {
+    margin: 1rem;
+  }
+
+  img {
+    width: 200px;
+    border-radius: 5px;
+  }
+}

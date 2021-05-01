@@ -1,0 +1,17 @@
+<section class="characters container">
+  <h2>Patients</h2>
+  <hr />
+  <div class="grid">
+    <article
+      class="episode col-12 col-t-6 col-d-4"
+      *ngFor="let character of arrCharacters"
+      (click)="getCharacter(character?.userId)"
+    >
+      <p>Patient Id - {{ character?.userId }}</p>
+      <p>
+        Name - <strong>{{ character?.firstName }} </strong>
+      </p>
+      <p>Last Name - {{ character?.lastName }}</p>
+    </article>
+  </div>
+</section>

@@ -2,7 +2,7 @@
 
 Project made for Tao company.
 
-Deployed at: https://tao-kata.netlify.app/home
+Deployed at: https://tao-kata.netlify.app
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
 

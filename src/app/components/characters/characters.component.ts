@@ -10,6 +10,7 @@ import { CharactersService } from 'src/app/services/characters.service';
   styleUrls: ['./characters.component.scss'],
 })
 export class CharactersComponent implements OnInit {
+  public page: number;
   arrCharacters: Character[];
 
   constructor(

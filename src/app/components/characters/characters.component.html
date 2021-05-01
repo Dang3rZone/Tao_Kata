@@ -3,15 +3,27 @@
   <hr />
   <div class="grid">
     <article
-      class="episode col-12 col-t-6 col-d-4"
-      *ngFor="let character of arrCharacters"
+      class="col-12 col-t-6 col-d-4"
+      *ngFor="
+        let character of arrCharacters
+          | paginate: { itemsPerPage: 20, currentPage: page }
+      "
       (click)="getCharacter(character?.userId)"
     >
       <p>Patient Id - {{ character?.userId }}</p>
       <p>
         Name - <strong>{{ character?.firstName }} </strong>
       </p>
-      <p>Last Name - {{ character?.lastName }}</p>
+      <p>
+        Last Name - <strong>{{ character?.lastName }}</strong>
+      </p>
     </article>
   </div>
 </section>
+<pagination-controls
+  (pageChange)="page = $event"
+  responsive=" true"
+  previousLabel="Previous"
+  nextLabel="Next"
+>
+</pagination-controls>

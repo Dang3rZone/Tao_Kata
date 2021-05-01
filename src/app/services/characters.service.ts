@@ -11,21 +11,23 @@ export class CharactersService {
     this.baseUrl = 'https://hr.oat.taocloud.org/v1/';
   }
 
-  /* obtener toda la lista de personajes */
+  // GET all patients
   getAll(): Promise<Character[]> {
-    return this.httpClient.get<Character[]>(`${this.baseUrl}users`).toPromise();
-  }
-
-  /*obtener un unico personaje por id */
-  getCharacterById(pId): Promise<Character> {
     return this.httpClient
-      .get<Character>(`https://hr.oat.taocloud.org/v1/user/${pId}`)
+      .get<Character[]>(`${this.baseUrl}users?limit=500`)
       .toPromise();
   }
 
+  // GET patient by ID
+  getCharacterById(pId): Promise<Character> {
+    return this.httpClient
+      .get<Character>(`${this.baseUrl}user/${pId}`)
+      .toPromise();
+  }
+  // GET patient by name or lastname
   searchByName(pName): Promise<Character[]> {
     return this.httpClient
-      .get<Character[]>(`https://hr.oat.taocloud.org/v1/users?name=${pName}`)
+      .get<Character[]>(`${this.baseUrl}users?name=${pName}`)
       .toPromise();
   }
 }
